@@ -2,6 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script>
+      function LinkssetColor(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+      alist[i].style.color = color;
+      i = i + 1;
+        }
+      }
+      function BodysetColor(color){
+        target.style.color = 'white';
+      }
+      function nightDayHandler(self){
+        var target = document.querySelector('body')
+        if(self.value === 'night'){
+        target.style.backgroundColor = 'black';
+        BodysetColor('white')
+        self.value = 'day';
+
+        LinkssetColor('powderblue')
+      } else {
+        target.style.backgroundColor = 'white'
+        target.style.color = 'black'
+        self.value = 'night'
+        BodysetColor('black')
+        Linkssetcolor('blue')
+      }
+    }
+    </script>
     <title>WEB1 - JavaSCript</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -20,7 +49,7 @@
       <input id="night_day" type="button" value="night" onclick="
       var target = document.querySelector('body');
       if(this.value === 'night'){
-        target.style.backgroundColor='black';
+      target.style.backgroundColor='black';
       target.style.color='white';
       this.value = 'day'
       }
