@@ -2,34 +2,75 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script>
-      function LinkssetColor(color){
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-      alist[i].style.color = color;
-      i = i + 1;
-        }
-      }
-      function BodysetColor(color){
-        target.style.color = 'white';
-      }
-      function nightDayHandler(self){
-        var target = document.querySelector('body')
-        if(self.value === 'night'){
-        target.style.backgroundColor = 'black';
-        BodysetColor('white')
-        self.value = 'day';
-
-        LinkssetColor('powderblue')
-      } else {
-        target.style.backgroundColor = 'white'
-        target.style.color = 'black'
-        self.value = 'night'
-        BodysetColor('black')
-        Linkssetcolor('blue')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    <!-- //   var Links = {
+    //     setColor:function(color){
+    //     var alist = document.querySelectorAll('a');
+    //     var i = 0;
+    //     while(i < alist.length){
+    //     alist[i].style.color = color;
+    //     i = i + 1;
+    //     }
+    //   }
+    // }
+    //   var body = {
+    //     setcolor:function (color){
+    //        document.querySelector('body').style.color = color;
+    //     },
+    //     setBackgroundColor:function (color){
+    //       document.querySelector('body').style.color = color;
+    //     }
+    //   }
+    //   function nightDayHandler(self){
+    //     var target = document.querySelector('body')
+    //     if(self.value === 'night'){
+    //     target.style.backgroundColor = 'black';
+    //     BodysetColor('white')
+    //     self.value = 'day';
+    //
+    //     Links.setcolor('powderblue')
+    //   } else {
+    //     Body.setBackgroundColor('white');
+    //     Body.setcolor('black');
+    //     self.value = 'night'
+    //
+    //     Links.setColor('blue');
+    //   }
+    // } -->
+    var Links = {
+      setColor:function(color){
+        <!-- // var alist = document.querySelectorAll('a');
+        // var i = 0;
+        // while(i < alist.length){
+        //   i = i + 1;
+        // } -->
+        $('a').css('color', color);
       }
     }
+    var Body = {
+      setColor:function(color){
+        <!-- //document.querySelector('body').style.color = color; -->
+        $('body').css('color', color);
+      },
+      setBackgroundColor:function (color){
+        <!-- //document.querySelector('body').style.backgroundColor = color; -->
+        $('body').css('color', color);
+      }
+    }
+    function nightDayHandler(self){
+      var target = document.querySelector('body');
+      if(self.value === 'night'){
+        Body.setBackgroundColor('black');
+        Body.setColor('white');
+        self.value = 'day'
+
+        Links.setColor('white')
+      } else {
+
+      }
+    }
+
     </script>
     <title>WEB1 - JavaSCript</title>
     <link rel="stylesheet" href="style.css">
